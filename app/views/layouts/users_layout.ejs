@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <%- stylesheet_link_tag('bootstrap', 'main', 'bootstrap-responsive') %>
+        <%- javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', 'bootstrap', 'rails', 'application') %>
+        <%- csrf_meta_tag() %>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Alias Links</a>
+								</div>
+						</div>
+						<div class="container">
+										<span class="navLinks"><a href="#">Aliases</a>
+															 
+    <%- link_to('<i class="icon-edit icon-white"></i> Edit', path_to.edit_user(users), {class: 'btn btn-primary'}) %>
+																<a href="#">Profile</a> <a href="#">Settings</a>	</span>
+								</div>
+            </div>
+        </div>
+            
+        <div class="container">
+            <% var flash = request.flash('info').pop(); if (flash) { %>
+                <div class="alert alert-info">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <%- flash %>
+                </div>
+            <% } %>
+            
+            <% flash = request.flash('error').pop(); if (flash) { %>
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <%- flash %>
+                </div>
+            <% }; %>
+            
+            <%- body %>
+            
+            <hr />
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+        </div>
+    </body>
+</html>

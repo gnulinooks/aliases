@@ -1,0 +1,26 @@
+<div class="page-header">
+				<h1>Welcome! </h1>
+				<div>
+
+	<br/>
+	<br/>
+<% form_for(users, {action: path_to.users(), method: 'POST', id: "user_form", class: 'form-horizontal' }, function(form){ %>
+				<div class="control-group">
+								<%- form.label("email", false, {class: "control-label" }) %>
+				<div class="controls" >
+								<%- form.input("email") %>
+				</div>
+				</div>
+				<div class="control-group">
+								<%- form.label("password", false, {class: "control-label" }) %>
+						   <div class="controls">
+											 <%- form.input("password", {type: "password"}) %>
+								</div>
+				</div>
+
+				<div class="form-actions">
+								<%- form.submit('Login', {class:'btn btn-primary'}) %>
+				<%- link_to('Signup', path_to.signup, {class:'btn btn-primary'}) %>
+				</div>
+
+<% }); %>

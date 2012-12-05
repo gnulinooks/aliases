@@ -1,0 +1,25 @@
+<%- errorMessagesFor(users) %>
+<div class="control-group">
+   <%- form.label("email", false, {class: "control-label"}) %>
+   <div class="controls">
+       <%- form.input("email") %>
+   </div>
+</div>
+<div class="control-group">
+   <%- form.label("password", false, {class: "control-label"}) %>
+   <div class="controls">
+       <%- form.input("password") %>
+   </div>
+</div>
+<div class="control-group">
+   <%- form.label("password_hash", false, {class: "control-label"}) %>
+   <div class="controls">
+       <%- form.input("password_hash") %>
+   </div>
+</div>
+<div class="control-group">
+   <%- form.label("password_salt", false, {class: "control-label"}) %>
+   <div class="controls">
+       <%- form.input("password_salt") %>
+   </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="page-header">
+    <h1>Details of users</h1>
+</div>
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr><th>email</th><td><%= users.email %></td></tr>
+        <tr><th>password</th><td><%= users.password %></td></tr>
+        <tr><th>password_hash</th><td><%= users.password_hash %></td></tr>
+        <tr><th>password_salt</th><td><%= users.password_salt %></td></tr>    
+    </tbody>
+</table>
+
+<div class="well">
+    <%- link_to('<i class="icon-edit icon-white"></i> Edit', path_to.edit_user(users), {class: 'btn btn-primary'}) %>
+    <%- link_to('<i class="icon-remove icon-white"></i> Delete', path_to.users(users), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+    or
+    <%- link_to('Back to index', path_to.users()) %>
+</div>
